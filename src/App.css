@@ -28,6 +28,42 @@
   color: #61dafb;
 }
 
+#header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1{
+  margin-left: 1em;
+}
+
+h2{
+  margin-left: 1em;
+}
+
+h3{
+  margin-left: 3em;
+}
+
+ul{
+  margin-left: 3.5em;
+}
+
+p{
+  margin-left: 3.5em;
+  font-size: 1.1em;
+}
+
+#stats{
+  margin-right: 1em;
+  font-size: 1.1em;
+}
+
+button{
+  margin-left: 20%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

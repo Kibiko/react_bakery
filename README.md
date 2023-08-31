@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Lab - The BNTA Bakery
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+In this exercise we're going to start building an app we'll develop further as we learn more about React. Ultimately the user will be able to see a range of cake recipes and be able to add their own, but for now we're going to display three pre-selected recipes on the screen.
 
-In the project directory, you can run:
+## Component Diagram
 
-### `npm start`
+![](/component_diagram.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## MVP
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The details of the cakes are below:
 
-### `npm test`
+```json
+// Victora Sponge
+{
+	cakeName: "Victoria Sponge",
+   	ingredients: [
+   		"eggs",
+      	"butter",
+      	"sugar",
+      	"self-raising flour",
+      	"baking powder",
+      	"milk"
+  	],
+  	price: 5
+   	rating: 5
+}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// Tea Loaf
+{
+ 	cakeName: "Tea Loaf",
+   	ingredients: [
+   		"eggs",
+      	"oil",
+      	"dried fruit",
+      	"sugar",
+      	"self-raising flour",
+      	"strong tea",
+  	],
+  	price: 2,
+  	rating: 3
+}
 
-### `npm run build`
+// Carrot Cake
+{
+ 	cakeName: "Carrot Cake",
+   	ingredients: [
+    	"carrots",
+      	"walnuts",
+      	"oil",
+      	"cream cheese",
+      	"flour",
+      	"sugar",
+   	],
+   	price: 8,
+   	rating: 5
+} 
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Each cake has a name, a list of ingredients, a price and a rating. The app should also include the average rating of all cakes. Draw a wireframe diagram to show how this information could be displayed on the page.
+- Draw a component diagram and consider where the state should be and what props need to be passed to which component.
+- Build a React app according to your design
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Extensions
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Add CSS to your app.
+- Add a piece of state to track the total value of the cakes sold. Add a "sell cake" button to each cake - when the button is clicked the total sale value should update appropriately.
+- There are two ways we can go about listing the ingredients. One would be to individually access each element in the array (`cake.ingredients[0]`, etc.) but that's not very dynamic - what happens if we get a cake with only five ingredients? If you haven't already, try to build out the ingredient list dynamically.
