@@ -56,12 +56,30 @@ p{
 }
 
 #stats{
-  margin-right: 1em;
-  font-size: 1.1em;
+  display: flex;
+  justify-content: center;
+  margin: 5em;
 }
 
 button{
-  margin-left: 20%;
+  margin-left: 20em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+#cakes{
+  display: flex;
+  justify-content: space-around;
+}
+
+#cake{
+  background-color: lightblue;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  margin: 1em;
 }
 
 @keyframes App-logo-spin {

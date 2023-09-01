@@ -4,8 +4,8 @@ import SaleCounter from '../components/SaleCounter';
 
 const CakeListContainer = () =>{
 
-    const [vicSponge] = useState({
-        cakeName: "Victoria Sponge",
+    const [vicSponge, setVictoriaSponge] = useState({
+            cakeName: "Victoria Sponge",
             ingredients: [
                 "eggs",
                 "butter",
@@ -20,8 +20,8 @@ const CakeListContainer = () =>{
 
     const [vicSpongeSold, setVicSpongeSold] = useState(0);
 
-    const [teaLoaf] = useState({
-        cakeName: "Tea Loaf",
+    const [teaLoaf, setTeaLoaf] = useState({
+            cakeName: "Tea Loaf",
             ingredients: [
                 "eggs",
                 "oil",
@@ -36,8 +36,8 @@ const CakeListContainer = () =>{
 
     const [teaLoadSold, setTeaLoafSold] = useState(0);
 
-    const [carrotCake] = useState({
-        cakeName: "Carrot Cake",
+    const [carrotCake, setCarrotCake] = useState({
+            cakeName: "Carrot Cake",
             ingredients: [
                 "carrots",
                 "walnuts",
@@ -52,30 +52,41 @@ const CakeListContainer = () =>{
 
     const [carrotCakeSold, setCarrotCakeSold] = useState(0);
 
+    const avgRating = (vicSponge.rating + teaLoaf.rating + carrotCake.rating)/3;
+
+    const totalValueSold = vicSpongeSold*vicSponge.price + teaLoadSold*teaLoaf.price + carrotCakeSold*carrotCake.price;
+
     return(
         <>  
             <div id="header">
                 <h1>Cake recipes:</h1>
-                <div id="stats">
-                    <p>Average rating of cakes: {(vicSponge.rating + teaLoaf.rating + carrotCake.rating)/3}</p>
-                    <p>Total value of cakes sold: £{vicSpongeSold*vicSponge.price + teaLoadSold*teaLoaf.price + carrotCakeSold*carrotCake.price}</p>
-                </div>
              </div>
 
-            <CakeDisplay cake={vicSponge}/>
-            <SaleCounter 
-                count={vicSpongeSold}
-                onButtonClick={setVicSpongeSold}/>
+            <div id="cakes">
+                <div id="cake">
+                    <CakeDisplay cake={vicSponge}/>
+                    <SaleCounter 
+                        count={vicSpongeSold}
+                        onButtonClick={setVicSpongeSold}/>
+                </div>
+                <div id="cake">
+                    <CakeDisplay cake={teaLoaf}/>
+                    <SaleCounter 
+                        count={teaLoadSold}
+                        onButtonClick={setTeaLoafSold}/>
+                </div>
+                <div id="cake">
+                    <CakeDisplay cake={carrotCake}/>
+                    <SaleCounter 
+                        count={carrotCakeSold}
+                        onButtonClick={setCarrotCakeSold}/>
+                </div>
+            </div>
 
-            <CakeDisplay cake={teaLoaf}/>
-            <SaleCounter 
-                count={teaLoadSold}
-                onButtonClick={setTeaLoafSold}/>
-
-            <CakeDisplay cake={carrotCake}/>
-            <SaleCounter 
-                count={carrotCakeSold}
-                onButtonClick={setCarrotCakeSold}/>
+            <div id="stats">
+                    <p>Average rating of cakes: {avgRating}</p>
+                    <p>Total value of cakes sold: £{totalValueSold}</p>
+            </div>
         </>
     )
 }
